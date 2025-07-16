@@ -7,6 +7,17 @@ async function criarAnimacao() {
   let codigo = document.querySelector(".area-codigo");
   let areaResultado = document.querySelector(".area-resultado");
 
+  let botao = document.querySelector(".botao-animacao");
+  // Desabilita botão temporariamente para esperar o retorno da IA
+  botao.disabled = true;
+  botao.textContent = "Gerando animação...";
+  botao.style.cursor = "wait";
+
+  // Fetch é uma função que busca dados de uma URL
+  // 1) endereço da URL
+  // 2) opções de configuração
+  // 3) envia dados para a URL
+  // 4) espera a resposta da URL
   let resposta = await fetch(webhook, {
     // Método POST para enviar dados
     method: "POST",
@@ -29,13 +40,14 @@ async function criarAnimacao() {
   // Exibe o resultado na área de resultado
   areaResultado.innerHTML = info.preview;
 
-  console.log(resultado);
+  // Adiciona o estilo da animação ao head do documento
+  document.head.insertAdjacentHTML(
+    "beforeend",
+    "<style>" + info.style + "</style>"
+  );
+
+  // Desfaz as alterações do botão
+  botao.disabled = false;
+  botao.textContent = "Criar outra animação";
+  botao.style.cursor = "pointer";
 }
-
-/*
-  // Procura por o botão de animação
-  let button = document.querySelector(".botao-animacao");
-
-  // Desabilita botão temporariamente para esperar o retorno da IA
-  button.disabled = true;
-*/
