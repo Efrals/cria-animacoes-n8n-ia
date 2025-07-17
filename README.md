@@ -18,7 +18,7 @@ Este projeto demonstra a integração entre uma interface web interativa e uma a
 ## 💻 Tecnologias Utilizadas
 
 - **HTML5** e **CSS3** – estrutura e estilo da interface.
-- **JavaScript Vanilla** – lógica para envio/recebimento de dados.
+- **JavaScript** – lógica para envio/recebimento de dados.
 - **n8n Cloud** – automação via webhook e processamento de IA.
 - **Webhook** – comunicação entre front-end e back-end automatizado.
 
@@ -73,7 +73,7 @@ async function criarAnimacao() {
 
 Design moderno, responsivo e amigável. Cores contrastantes, elementos bem espaçados e estilo visual agradável para desenvolvedores e usuários.
 
-## 📷 Exemplo de Retorno do n8n
+## 📦 Exemplo de Retorno do n8n
 
 ```json
 {
